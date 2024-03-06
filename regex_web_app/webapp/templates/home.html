@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    
+</head>
+<body>
+   <h1> Regex web app</h1>
+
+  <form action="/result">
+    Regex expression: <input type="text" name ='regex_exp'> <br>
+    Content: <input type="text" name ='string'> <br>
+    <input type="submit"> <br>
+   </form>
+
+
+   <div>
+    {% for m in match %}
+    {% if match %}
+        <div class="text">
+          <li>{{ m }}</li>
+        </div>
+    {% else %}
+    <p>No matching words</p>
+    {% endif %}
+    {% endfor %}
+</div>
+</body>
+</html>
